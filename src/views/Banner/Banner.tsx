@@ -2,6 +2,7 @@ import styles from "./Banner.module.scss"
 import Container from "../../components/Container/Container";
 import bannerImg from "../../assets/img/header-img.svg";
 import arrow from "../../assets/img/arrow2.svg";
+import DeveloperInfo from "./DeveloperInfo/DeveloperInfo";
 const Banner = () => {
     return (
         <section className={styles.banner}>
@@ -10,9 +11,7 @@ const Banner = () => {
                     <h3 className={styles.banner__greeting}>
                         <span>Welcome to my Portfolio</span>
                     </h3>
-                    <h1 className={styles.banner__developerInfo}>
-                        Hi! I'm Denis ...
-                    </h1>
+                    <DeveloperInfo />
                     <p>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
