@@ -2,6 +2,7 @@
   background: transparent;
   position: fixed;
   width: 100%;
+  z-index: 10000;
   &__logo {
     img {
       max-width: 120px;

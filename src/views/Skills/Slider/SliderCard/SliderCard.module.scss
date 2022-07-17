@@ -1,0 +1,13 @@
+.sliderCard {
+  h4 {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+  }
+  &__image {
+    img {
+      width: calc(min(200px, 100%));
+    }
+  }
+}
