@@ -1,0 +1,45 @@
+.header {
+  background: transparent;
+  position: fixed;
+  width: 100%;
+  &__logo {
+    img {
+      max-width: 120px;
+      width: 100%;
+    }
+  }
+  &__navigate {
+    display: flex;
+    align-items: center;
+    li {
+      margin: 0 25px;
+    }
+    a {
+      color: #fff;
+      font-size: 18px;
+    }
+    &_big {
+      display: flex;
+      a {
+        margin-right: 5px;
+      }
+    }
+    &_opacity {
+      a {
+        opacity: 0.75;
+      }
+    }
+  }
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+  &_scroll {
+    background: #121212;
+  }
+}
+
+
+
