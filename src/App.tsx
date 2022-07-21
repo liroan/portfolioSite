@@ -3,6 +3,7 @@ import './App.css';
 import Header from "./components/Header/Header";
 import Banner from "./views/Banner/Banner";
 import Skills from "./views/Skills/Skills";
+import ProjectsPage from "./views/ProjectsPage/ProjectsPage";
 
 function App() {
   return (
@@ -10,9 +11,7 @@ function App() {
           <Header/>
           <Banner />
           <Skills />
-          <div className="lol">
-
-          </div>
+          <ProjectsPage />
       </div>
   );
 }
