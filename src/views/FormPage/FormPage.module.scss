@@ -63,6 +63,25 @@
     width: 100%;
     min-height: 250px;
   }
+  &__mainButton {
+    position: relative;
+    z-index: 1000;
+    background: #fff;
+    display: inline-block;
+    border: none;
+    button {
+      width: 200px;
+      background: transparent;
+      color: #000;
+      &::before {
+        background: #000;
+      }
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 752px) {
@@ -81,6 +100,9 @@
     &__field {
       width: 100%;
       margin-right: 0;
+    }
+    &__mainButton {
+      margin: 0 auto;
     }
   }
 }

@@ -44,6 +44,20 @@
   &_scroll {
     background: #121212;
   }
+  &__mainButton {
+    border: 1px solid #fff;
+    button {
+      background: transparent;
+      color: #fff;
+      &::before {
+         background: #fff;
+      }
+
+      &:hover {
+        color: #000;
+      }
+    }
+  }
 }
 
 
