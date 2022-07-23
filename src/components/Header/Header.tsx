@@ -25,32 +25,16 @@ const Header = () => {
                     <img src={logo} alt=""/>
                 </div>
                 <nav className={styles.header__navigate}>
-                    <ul>
-                        <li className={styles.header__navigate_opacity}>
-                            <a href="">Home</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li className={styles.header__navigate_opacity}>
-                            <a href="">Skills</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li className={styles.header__navigate_opacity}>
-                            <a href="">Projects</a>
-                        </li>
-                    </ul>
-                    <ul>
+                    <ul className={styles.header__refs}>
+                        <li className={styles.header__navigate_opacity}><a href="">Home</a></li>
+                        <li className={styles.header__navigate_opacity}><a href="">Skills</a></li>
+                        <li className={styles.header__navigate_opacity}><a href="">Projects</a></li>
                         <li className={styles.header__navigate_big}>
                             <SocialRef href="/" image={navIcon1}/>
                             <SocialRef href="/" image={navIcon2}/>
                             <SocialRef href="/" image={navIcon3}/>
                         </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <Button>Let`s connect</Button>
-                        </li>
+                        <li><Button>Let`s connect</Button></li>
                     </ul>
                 </nav>
             </Container>
