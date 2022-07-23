@@ -34,7 +34,7 @@ const Header = () => {
                             <SocialRef href="/" image={navIcon2}/>
                             <SocialRef href="/" image={navIcon3}/>
                         </li>
-                        <li><Button>Let`s connect</Button></li>
+                        <li className={styles.header__mainButton}><Button>Let`s connect</Button></li>
                     </ul>
                 </nav>
             </Container>

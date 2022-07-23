@@ -1,6 +1,7 @@
 import styles from "./FormPage.module.scss";
 import img from "../../assets/img/contact-img.svg";
 import Container from "../../components/Container/Container";
+import Button from "../../components/Button/Button";
 
 const FormPage = () => {
     return (
@@ -30,7 +31,7 @@ const FormPage = () => {
                             <textarea/>
                         </div>
                     </div>
-                    <button>SEND</button>
+                    <div className={styles.formPage__mainButton}><Button>Send</Button></div>
                 </div>
             </Container>
         </section>
