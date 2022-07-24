@@ -1,13 +1,54 @@
 .sliderCard {
+  position: relative;
   h4 {
     margin-top: 20px;
     font-size: 18px;
     color: #fff;
     font-weight: 500;
   }
-  &__image {
-    img {
+  &__progress {
+    /*img {
       width: calc(min(200px, 100%));
+    }*/
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__percent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    width: 120px;
+    height: 120px;
+    padding: 20px;
+    font-size: 36px;
+    font-weight: 600;
+    border-radius: 50%;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    circle {
+      fill: none;
+      stroke: url(#GradientColor);
+      stroke-width: 20px;
+      stroke-dasharray: 472;
+      stroke-dashoffset: 472;
+      transition: 0.5s;
     }
+  }
+}
+
+@keyframes progress {
+  100% {
+    stroke-dashoffset: 0;
   }
 }
