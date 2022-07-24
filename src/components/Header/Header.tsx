@@ -9,6 +9,7 @@ import Button from "../Button/Button";
 import {useEffect, useState} from "react";
 const Header = () => {
     const [isScroll, setIsScroll] = useState(false);
+    const [isOpenMenu, setIsOpenMenu] = useState(false);
     useEffect(() => {
         const onScroll = () => {
             console.log(window.scrollY, isScroll)
@@ -18,13 +19,14 @@ const Header = () => {
         window.addEventListener('scroll', onScroll);
         return () => window.removeEventListener('scroll', onScroll)
     }, [isScroll])
+
     return (
         <header className={styles.header + " " + (isScroll ? styles.header_scroll : "")}>
             <Container>
                 <div className={styles.header__logo}>
                     <img src={logo} alt=""/>
                 </div>
-                <nav className={styles.header__navigate}>
+                <nav className={styles.header__navigate + " " + (isScroll ? styles.header_scroll : "") + " " + (isOpenMenu ? styles.header__menu_open : styles.header__menu_close) + " " + styles.header__menu_normal}>
                     <ul className={styles.header__refs}>
                         <li className={styles.header__navigate_opacity}><a href="">Home</a></li>
                         <li className={styles.header__navigate_opacity}><a href="">Skills</a></li>
@@ -37,6 +39,9 @@ const Header = () => {
                         <li className={styles.header__mainButton}><Button>Let`s connect</Button></li>
                     </ul>
                 </nav>
+                <div className={styles.header__burgerBlock} onClick={() => setIsOpenMenu(prevState => !prevState)}>
+                    <div className={styles.header__burger} />
+                </div>
             </Container>
         </header>
     )
