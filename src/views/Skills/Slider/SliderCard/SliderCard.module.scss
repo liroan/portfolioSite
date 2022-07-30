@@ -1,5 +1,6 @@
 .sliderCard {
   position: relative;
+  margin-bottom: 50px;
   h4 {
     margin-top: 20px;
     font-size: 18px;
@@ -7,9 +8,7 @@
     font-weight: 500;
   }
   &__progress {
-    /*img {
-      width: calc(min(200px, 100%));
-    }*/
+    margin: 0 auto;
     width: 160px;
     height: 160px;
     border-radius: 50%;
@@ -40,15 +39,7 @@
       fill: none;
       stroke: url(#GradientColor);
       stroke-width: 20px;
-      stroke-dasharray: 472;
-      stroke-dashoffset: 472;
-      transition: 0.5s;
+      stroke-dasharray: 440;
     }
-  }
-}
-
-@keyframes progress {
-  100% {
-    stroke-dashoffset: 0;
   }
 }
