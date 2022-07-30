@@ -26,7 +26,7 @@ const Header = () => {
                 <div className={styles.header__logo}>
                     <img src={logo} alt=""/>
                 </div>
-                <nav className={styles.header__navigate + " " + (isScroll ? styles.header_scroll : "") + " " + (isOpenMenu ? styles.header__menu_open : styles.header__menu_close) + " " + styles.header__menu_normal}>
+                <nav className={styles.header__navigate + " " + (isOpenMenu && isScroll ? styles.header_scroll : "") + " " + (isOpenMenu ? styles.header__menu_open : styles.header__menu_close) + " " + styles.header__menu_normal}>
                     <ul className={styles.header__refs}>
                         <li className={styles.header__navigate_opacity}><a href="">Home</a></li>
                         <li className={styles.header__navigate_opacity}><a href="">Skills</a></li>

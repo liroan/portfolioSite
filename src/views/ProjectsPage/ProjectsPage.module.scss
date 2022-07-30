@@ -30,6 +30,7 @@
     background: #151515;
   }
   &__tab {
+    cursor: pointer;
     text-align: center;
     height: 60px;
     width: 33.4%;
@@ -49,8 +50,10 @@
       background: linear-gradient(90.21deg, rgb(170, 54, 124) -5.91%, rgb(74, 47, 189) 111.58%);
       z-index: 0;
     }
-    &:hover::before {
-      width: 100%;
+    &_active {
+      &::before {
+        width: 100%;
+      }
     }
     & > div {
       font-size: 18px;
@@ -66,6 +69,9 @@
     flex-wrap: wrap;
     justify-content: center;
     padding-bottom: 80px;
+    a {
+      width: 38%;
+    }
   }
   &__item {
     width: 30%;
