@@ -5,8 +5,19 @@ import navIcon1 from "../../assets/img/nav-icon1.svg";
 import navIcon2 from "../../assets/img/nav-icon2.svg";
 import navIcon3 from "../../assets/img/nav-icon3.svg";
 import logo from "../../assets/img/logo.svg";
+import {useState} from "react";
+import {toast} from "react-toastify";
 
 const Footer = () => {
+    const [value, setValue] = useState("");
+    const onChangeValue = (e: any) => {
+        setValue(e.target.value);
+    }
+    const onSubmit = (e: any) => {
+        e.preventDefault();
+        if (value.length === 0) toast.error("Поле обязательно для заполнения!")
+        else toast.warn("Данная функция пока недоступна!")
+    }
     return  (
         <footer className={styles.footer}>
             <Container>
@@ -14,10 +25,10 @@ const Footer = () => {
                     <div className={styles.footer__subscribe_text}>
                         <h6>Subscribe to our Newsletter & Never miss latest updates</h6>
                     </div>
-                    <div className={styles.footer__subscribe_field}>
-                        <input type="text" placeholder="Email Adress"/>
+                    <form className={styles.footer__subscribe_field} onSubmit={onSubmit}>
+                        <input type="text" value={value} onChange={onChangeValue} placeholder="Email Address"/>
                         <button>Submit</button>
-                    </div>
+                    </form>
                 </div>
                 <div className={styles.footer__info}>
                     <div className={styles.footer__logo}>
