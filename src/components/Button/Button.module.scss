@@ -1,26 +1,21 @@
 .mainButton {
   button {
+    cursor: pointer;
     position: relative;
-    /*background: transparent;*/
     border: none;
     padding: 18px 34px;
     font-weight: 600;
     font-size: 18px;
-    /*color: #fff;*/
     transition: 0.3s;
     &::before {
       content: "";
       width: 0;
       height: 100%;
-     /* background: #fff;*/
       transition: 0.4s;
       position: absolute;
       top: 0;
       left: 0;
       z-index: -1;
-    }
-    &:hover {
-      //color: #000;
     }
     &:hover::before {
       width: 100%;

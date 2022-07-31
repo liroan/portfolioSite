@@ -6,13 +6,15 @@ import styles from "./Header.module.scss";
 import Container from "../Container/Container";
 import SocialRef from "../SocialRef/SocialRef";
 import Button from "../Button/Button";
-import {useEffect, useState} from "react";
-const Header = () => {
+import {FC, useEffect, useState} from "react";
+import classNames from "classnames";
+
+const Header:FC = () => {
     const [isScroll, setIsScroll] = useState(false);
     const [isOpenMenu, setIsOpenMenu] = useState(false);
+
     useEffect(() => {
         const onScroll = () => {
-            console.log(window.scrollY, isScroll)
             if (window.scrollY > 50 && !isScroll) setIsScroll(true);
             else if (window.scrollY <= 50 && isScroll) setIsScroll(false);
         }
@@ -21,12 +23,16 @@ const Header = () => {
     }, [isScroll])
 
     return (
-        <header className={styles.header + " " + (isScroll ? styles.header_scroll : "")}>
+        <header className={classNames(styles.header, { [styles.header_scroll]: isScroll })}>
             <Container>
                 <div className={styles.header__logo}>
                     <img src={logo} alt=""/>
                 </div>
-                <nav className={styles.header__navigate + " " + (isOpenMenu && isScroll ? styles.header_scroll : "") + " " + (isOpenMenu ? styles.header__menu_open : styles.header__menu_close) + " " + styles.header__menu_normal}>
+                <nav className={classNames(styles.header__navigate, {
+                    [styles.header_scroll]: isOpenMenu && isScroll,
+                    [styles.header__menu_open]: isOpenMenu,
+                    [styles.header__menu_close]: !isOpenMenu})
+                }>
                     <ul className={styles.header__refs}>
                         <li className={styles.header__navigate_opacity}><a href="#home">Home</a></li>
                         <li className={styles.header__navigate_opacity}><a href="#skills">Skills</a></li>

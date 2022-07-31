@@ -1,20 +1,12 @@
 import SliderCard from "./SliderCard/SliderCard";
 import styles from "./Slider.module.scss";
-import {useState} from "react";
+import {FC, useState} from "react";
+import {skills} from "../../../constants/constants";
+import SliderPages from "./SliderPages/SliderPages";
 
 
-const skills = [
-    { name: "Html/Css/Js", percent: 90},
-    { name: "React/Redux/Ts", percent: 80},
-    { name: "Ответственность", percent: 99},
-    { name: "Умение работать в команде", percent: 85},
-    { name: "Git", percent: 100},
-    { name: "Знание основных алгоритмов", percent: 80},
-]
-
-const Slider = () => {
+const Slider:FC = () => {
     const [numberSkill, setNumberSkill] = useState(0);
-    const symbols = ["A", "B", "C"];
     return (
         <div className={styles.slider}>
             <div className={styles.slider__sliderCards}>
@@ -26,17 +18,7 @@ const Slider = () => {
                 </div>
             </div>
             <div className={styles.slider__pages}>
-                {
-                    symbols.map((symbol, i) => {
-                        return (
-                            <div className={styles.slider__page_margin}>
-                                <div className={styles.slider__percent + " " + (i * 2 === numberSkill ? styles.slider__percent_active : "")} onClick={() => setNumberSkill(i * 2)}>
-                                    {symbol}
-                                </div>
-                            </div>
-                        )
-                    })
-                }
+                <SliderPages numberSkill={numberSkill} setNumberSkill={setNumberSkill}/>
             </div>
         </div>
     )

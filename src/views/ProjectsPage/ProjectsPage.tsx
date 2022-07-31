@@ -4,18 +4,24 @@ import Container from "../../components/Container/Container";
 import {useEffect, useState} from "react";
 import {getProjects} from "../../store/projectReducer";
 import {useDispatch, useSelector} from "react-redux";
-import {IProject, IProjects} from "../../types/types";
-import {Link} from "react-router-dom";
+import {IProject} from "../../types/types";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import notFound from "../../assets/img/not-found.png"
-import ProjectLoader from "./ProjectLoader";
+import ProjectLoader from "./ProjectsLoader/ProjectLoader/ProjectLoader";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import Animate from "../../components/Animate/Animate";
+import {tabs} from "../../constants/constants";
+import ProjectsLoader from "./ProjectsLoader/ProjectsLoader";
+import ProjectsError from "./ProjectsError/ProjectsError";
+import ProjectsInfo from "./ProjectsInfo/ProjectsInfo";
+import ProjectsTabs from "./ProjectsTabs/ProjectsTabs";
+import ProjectsItems from "./ProjectsItems/ProjectsItems";
+
 const ProjectsPage = () => {
     const dispatch = useDispatch();
     const [currentCategory, setCurrentCategory] = useState(0);
-    const tabs = ["Best", "Play", "Unfinished"];
     const projects = useSelector((state: any) => state.projects.projects[currentCategory]);
     const { error, isLoading } = useSelector((state: any) => state.projects);
     useEffect(() => {
@@ -29,55 +35,14 @@ const ProjectsPage = () => {
             toast.error(error)
         }
     }, [isLoading, error])
-    const errorComponent = !isLoading && error && <div className={styles.projects__error}><div><img src={notFound} alt=""/></div></div>
-    const loadingComponent = isLoading && <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <ProjectLoader />
-        <ProjectLoader />
-        <ProjectLoader />
-    </div>
     return (
         <section className={styles.projects} id="projects">
             <Container>
-                <TrackVisibility>
-                    {({ isVisible }) =>
-                        <div className= {isVisible ? "animate__animated animate__fadeIn": ""}>
-                            <div><ToastContainer style={{marginTop: 60}}/></div>
-                            <div className={styles.projects__info}>
-                                <h2 className={styles.projects__title}>Projects</h2>
-                                <p className={styles.projects__subtitle}>Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                                    dummy text ever since the 1500s, when an unknown
-                                    printer took a galley of type and scrambled it to make a type specimen book.
-                                </p>
-                            </div>
-                            <div className={styles.projects__tabs}>
-                                {tabs.map((tab, index) => {
-                                    return (
-                                        <div
-                                            className={styles.projects__tab + " " + (index === currentCategory ? styles.projects__tab_active : "")}
-                                            onClick={() => setCurrentCategory(index)}>
-                                            <div>{tab}</div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                            <div className={styles.projects__items}>
-                                {errorComponent || loadingComponent || (projects &&
-                                    projects.map((project: IProject) => (
-                                        <div className={styles.projects__item}>
-                                            <a href={project.ref} target="_blank" rel="noreferrer">
-                                                <img src={project.img} alt=""/>
-                                                <div className={styles.projects__item_hoverText}>
-                                                    <h4>{project.name}</h4>
-                                                    <p>{project.description}</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    )))}
-                            </div>
-                        </div>
-                    }
-                </TrackVisibility>
+                <Animate animateClasses="animate__animated animate__fadeIn">
+                    <ProjectsInfo />
+                    <ProjectsTabs  currentCategory={currentCategory} setCurrentCategory={setCurrentCategory}/>
+                    <ProjectsItems error={error}  isLoading={isLoading} projects={projects}/>
+                </Animate>
             </Container>
         </section>
     )

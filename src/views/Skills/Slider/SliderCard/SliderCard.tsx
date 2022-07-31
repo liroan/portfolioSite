@@ -1,6 +1,12 @@
 import styles from "./SliderCard.module.scss"
+import {ISkill} from "../../../../types/types";
+import {FC} from "react";
 
-const SliderCard = ( {skill }: any ) => {
+interface SliderCardProps {
+    skill: ISkill;
+}
+
+const SliderCard:FC<SliderCardProps> = ({ skill }) => {
     return (
         <div className={styles.sliderCard}>
             <div className={styles.sliderCard__progress}>

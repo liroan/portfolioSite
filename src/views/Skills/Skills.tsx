@@ -3,6 +3,7 @@ import styles from "./Skills.module.scss";
 import Container from "../../components/Container/Container";
 import Slider from "./Slider/Slider";
 import image from "../../assets/img/color-sharp.png"
+
 const Skills = () => {
     return (
         <section className={styles.skills} id="skills">

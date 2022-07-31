@@ -19,3 +19,8 @@ export interface IAction<Type> {
     type: string,
     payload?: Type;
 }
+
+export interface ISkill {
+    name: string,
+    percent: number
+}
