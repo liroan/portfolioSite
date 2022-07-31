@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "img": "https://i.ibb.co/nLfKZbP/lol.png",
+    "name": "Social Network",
+    "description": "outdated, but very good",
+    "ref": "https://liroan.github.io/react-apps/dialogs",
+    "category": "0"
+  },
+  {
+    "id": "2",
+    "img": "https://i.ibb.co/DCqttNy/lol2.png",
+    "name": "layout",
+    "description": "beautiful (animation) website",
+    "ref": "https://liroan.github.io/mysite4/",
+    "category": "0"
+  },
+  {
+    "id": "3",
+    "img": "https://i.ibb.co/fMjQdyZ/lol3.png",
+    "name": "To-do list",
+    "description": "native js/html/css",
+    "ref": "https://liroan.github.io/to-do-list/",
+    "category": "0"
+  },
+  {
+    "id": "4",
+    "img": "https://i.ibb.co/pWpTR6Z/lol4.png",
+    "name": "Snake",
+    "description": "native js/html/css",
+    "ref": "https://liroan.github.io/snake/",
+    "category": "1"
+  },
+  {
+    "id": "5",
+    "img": "https://i.ibb.co/dL8dHzH/lol5.png",
+    "name": "Ping Pong",
+    "description": "native js/html/css",
+    "ref": "https://liroan.github.io/point/",
+    "category": "1"
+  },
+  {
+    "id": "6",
+    "img": "https://w7.pngwing.com/pngs/100/474/png-transparent-paper-unlayered-and-free-a-journal-for-the-loosed-lady-in-you-404-text-logo-computer-wallpaper.png",
+    "name": "PDD Site",
+    "description": "unusual react project",
+    "ref": "https://github.com/liroan/pdd",
+    "category": "2"
+  }
+]

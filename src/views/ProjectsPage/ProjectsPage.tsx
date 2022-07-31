@@ -8,6 +8,8 @@ import {IProject, IProjects} from "../../types/types";
 import {Link} from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import notFound from "../../assets/img/not-found.png"
+import ProjectLoader from "./ProjectLoader";
 const ProjectsPage = () => {
     const dispatch = useDispatch();
     const [currentCategory, setCurrentCategory] = useState(0);
@@ -25,6 +27,12 @@ const ProjectsPage = () => {
             toast.error(error)
         }
     }, [isLoading, error])
+    const errorComponent = !isLoading && error && <div className={styles.projects__error}><div><img src={notFound} alt=""/></div></div>
+    const loadingComponent = isLoading && <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <ProjectLoader />
+        <ProjectLoader />
+        <ProjectLoader />
+    </div>
     return (
         <section className={styles.projects}>
             <Container>
@@ -48,7 +56,7 @@ const ProjectsPage = () => {
                 </div>
                 <div className={styles.projects__items}>
                     {
-                        !projects ? <>Loading</> :
+                        errorComponent || loadingComponent || (projects &&
                         projects.map((project: IProject) => (
                                 <div className={styles.projects__item}>
                                     <a href={project.ref} target="_blank" rel="noreferrer">
@@ -59,7 +67,7 @@ const ProjectsPage = () => {
                                     </div>
                                     </a>
                                 </div>
-                        ))
+                        )))
                     }
                 </div>
             </Container>
