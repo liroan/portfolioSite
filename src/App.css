@@ -16,3 +16,8 @@ a {
   height: 200vh;
   background: blue;
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}

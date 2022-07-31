@@ -5,7 +5,7 @@ import Slider from "./Slider/Slider";
 import image from "../../assets/img/color-sharp.png"
 const Skills = () => {
     return (
-        <div className={styles.skills}>
+        <section className={styles.skills} id="skills">
             <div className={styles.skills__container_outer}>
                 <Container >
                     <div className={styles.skills__container_inner}>
@@ -19,7 +19,7 @@ const Skills = () => {
                 </Container>
                 <img src={image} alt="" className={styles.skills__bgImage}/>
             </div>
-        </div>
+        </section>
     )
 }
 

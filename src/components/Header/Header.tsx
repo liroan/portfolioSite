@@ -28,9 +28,9 @@ const Header = () => {
                 </div>
                 <nav className={styles.header__navigate + " " + (isOpenMenu && isScroll ? styles.header_scroll : "") + " " + (isOpenMenu ? styles.header__menu_open : styles.header__menu_close) + " " + styles.header__menu_normal}>
                     <ul className={styles.header__refs}>
-                        <li className={styles.header__navigate_opacity}><a href="">Home</a></li>
-                        <li className={styles.header__navigate_opacity}><a href="">Skills</a></li>
-                        <li className={styles.header__navigate_opacity}><a href="">Projects</a></li>
+                        <li className={styles.header__navigate_opacity}><a href="#home">Home</a></li>
+                        <li className={styles.header__navigate_opacity}><a href="#skills">Skills</a></li>
+                        <li className={styles.header__navigate_opacity}><a href="#projects">Projects</a></li>
                         <li className={styles.header__navigate_big}>
                             <SocialRef href="/" image={navIcon1}/>
                             <SocialRef href="/" image={navIcon2}/>
